@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight&family=Inter:opsz@14..32&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind css -->
+    <link href="output.css" rel="stylesheet" />
+
+    <!-- Alpine.js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  <body class="bg-back">
+    <!-- NAVIGATION -->
+    <nav
+      class="py-10 px-4 sm:px-[80px] md:px-32 sticky top-0 bg-back"
+      x-data="{open: false}"
+    >
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <img src="../public/assets/logo.svg" alt="logo" />
+          <div class="hidden md:block">
+            <ul class="flex flex-row gap-5 items-center">
+              <li class="font-semibold py-2 px-2 border-b-4 border-ungu">
+                <a href="#">Home</a>
+              </li>
+              <li class="font-semibold py-2 px-2"><a href="#">About Us</a></li>
+              <li class="font-semibold py-2 px-2"><a href="#">Courses</a></li>
+              <li class="font-semibold py-2 px-2"><a href="#">FAQ</a></li>
+              <li>
+                <button
+                  class="px-6 py-[14px] bg-ungu text-white font-inter font-semibold rounded-md"
+                >
+                  Contact Us
+                </button>
+              </li>
+            </ul>
+          </div>
+          <button class="block md:hidden" @click="open = !open">
+            <img src="../public/assets/toggle.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
+        class="fixed bottom-0 right-0 left-0 p-4 bg-white"
+      >
+        <ul class="flex flex-row justify-between">
+          <li class="text-ungu">
+            <button class="flex flex-col justify-center items-center">
+              <box-icon
+                class="text-2xl"
+                name="home-alt"
+                color="#8B5CF6"
+              ></box-icon>
+              <span class="text-base font-bold">Home</span>
+            </button>
+          </li>
+          <li class="text-gray-500 opacity-50">
+            <button class="flex flex-col justify-center items-center">
+              <box-icon class="text-2xl" name="layer"></box-icon>
+              <span class="text-base font-bold">About</span>
+            </button>
+          </li>
+          <li class="text-gray-500 opacity-50">
+            <button class="flex flex-col justify-center items-center">
+              <box-icon class="text-2xl" name="book-content"></box-icon>
+              <span class="text-base font-bold">Courses</span>
+            </button>
+          </li>
+          <li class="text-gray-500 opacity-50">
+            <button class="flex flex-col justify-center items-center">
+              <box-icon class="text-2xl" name="chat"></box-icon>
+              <span class="text-base font-bold">FAQ</span>
+            </button>
+          </li>
+          <li class="text-gray-500 opacity-50">
+            <button class="flex flex-col justify-center items-center">
+              <!-- <box-icon class="text-2xl" name="menu"></box-icon> -->
+              <box-icon type="solid" class="text-2xl" name="contact"></box-icon>
+              <span class="text-base font-bold">Contact</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- END NAVIGATION -->
+
+    <!-- HERO SECTION -->
+    <section class="mt-4">
+      <div
+        class="container mx-auto py-10 w-[401px] sm:w-[787px] text-center flex flex-col items-center"
+      >
+        <h1
+          class="text-[38px] sm:text-[80px] font-extrabold leading-9 sm:leading-[88px] mb-8"
+        >
+          Where the joy of learn meets the power of community
+        </h1>
+        <p class="text-abu text-xl leading-[26px] sm:leading-8 sm:text-2xl">
+          Dive deep in immersive, interactive small groups. Expand horizons,
+          engage in discussions, and elevate your learning journey with us.
+        </p>
+        <div class="flex flex-col gap-2 w-44 mt-10">
+          <button
+            class="px-6 py-[14px] text-white bg-ungu font-semibold rounded-md"
+          >
+            Start your travel
+          </button>
+          <button
+            class="px-6 py-[14px] text-ungu flex flex-row items-center justify-center"
+          >
+            <span>Watch video</span>
+            <box-icon
+              color="#8B5CF6"
+              type="solid"
+              name="chevron-right"
+            ></box-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- END HERO SECTION -->
+
+    <!-- BENFIT -->
+    <section>
+      <div
+        class="container mx-auto px-4 py-12 lg:py-32 lg:px-32 flex flex-col xl:flex-row gap-[15px]"
+      >
+        <div class="px-8 py-12 bg-black flex flex-row gap-[10px] rounded-xl">
+          <div class="pt-[10px] px-[10px]">
+            <img src="../public/assets/clipboard.svg" alt="" />
+          </div>
+          <div class="flex flex-col gap-[10px]">
+            <h3 class="text-3xl text-white font-semibold">Explore Topic</h3>
+            <p class="text-xl text-white font-medium">
+              Explore our selection of courses in development
+            </p>
+          </div>
+        </div>
+        <div class="px-8 py-12 bg-black flex flex-row gap-[10px] rounded-xl">
+          <div class="pt-[10px] px-[10px]">
+            <img src="../public/assets/people.svg" alt="" />
+          </div>
+          <div class="flex flex-col gap-[10px]">
+            <h3 class="text-3xl text-white font-semibold">Meet new friends</h3>
+            <p class="text-xl text-white font-medium">
+              Join the network with million of students and learn
+            </p>
+          </div>
+        </div>
+        <div class="px-8 py-12 bg-black flex flex-row gap-[10px] rounded-xl">
+          <div class="pt-[10px] px-[10px]">
+            <img src="../public/assets/people.svg" alt="" />
+          </div>
+          <div class="flex flex-col gap-[10px]">
+            <h3 class="text-3xl text-white font-semibold">Learn code</h3>
+            <p class="text-xl text-white font-medium">
+              Learn all about code and become in a developer
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END BENFIT -->
+
+    <!-- POPULAR COURSES -->
+    <section>
+      <div class="container mx-auto lg:px-32 py-12 md:py-32">
+        <h1 class="text-[48px] font-semibold text-center mb-10">
+          Popular Courses
+        </h1>
+        <!-- card course -->
+        <div
+          class="px-6 sm:px-2 flex flex-col items-center md:flex-row md:flex-wrap xl:flex-nowrap gap-6"
+        >
+          <div class="p-4 border-2 rounded-lg w-[354px]">
+            <img
+              class="rounded-lg"
+              src="../public/images/thumbnail.jpg"
+              alt=""
+            />
+            <div class="mt-6">
+              <div>
+                <h3 class="text-2xl font-semibold">
+                  Frontend Development with JavaScript
+                </h3>
+                <p class="mt-2 text-abu text-sm font-normal">
+                  By Cristian Muñoz
+                </p>
+              </div>
+              <div class="mt-5 mb-6 flex flex-row gap-[5px]">
+                <img src="../public/assets/timer.svg" alt="" />
+                <p>Duration: 7 eeks</p>
+              </div>
+              <div>
+                <div class="flex flex-row gap-[5px] mb-2">
+                  <p class="text-abu">$80.00 USD</p>
+                  <p class="text-abu">80% discount</p>
+                </div>
+                <button
+                  class="w-full py-[14px] text-white bg-ungu font-medium rounded-md"
+                >
+                  Buy now $14.00 USD
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 border-2 rounded-lg w-[354px]">
+            <img
+              class="rounded-lg"
+              src="../public/images/thumbnail.jpg"
+              alt=""
+            />
+            <div class="mt-6">
+              <div>
+                <h3 class="text-2xl font-semibold">
+                  Frontend Development with JavaScript
+                </h3>
+                <p class="mt-2 text-abu text-sm font-normal">
+                  By Cristian Muñoz
+                </p>
+              </div>
+              <div class="mt-5 mb-6 flex flex-row gap-[5px]">
+                <img src="../public/assets/timer.svg" alt="" />
+                <p>Duration: 7 eeks</p>
+              </div>
+              <div>
+                <div class="flex flex-row gap-[5px] mb-2">
+                  <p class="text-abu">$80.00 USD</p>
+                  <p class="text-abu">80% discount</p>
+                </div>
+                <button
+                  class="w-full py-[14px] text-white bg-ungu font-medium rounded-md"
+                >
+                  Buy now $14.00 USD
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 border-2 rounded-lg w-[354px]">
+            <img
+              class="rounded-lg"
+              src="../public/images/thumbnail.jpg"
+              alt=""
+            />
+            <div class="mt-6">
+              <div>
+                <h3 class="text-2xl font-semibold">
+                  Frontend Development with JavaScript
+                </h3>
+                <p class="mt-2 text-abu text-sm font-normal">
+                  By Cristian Muñoz
+                </p>
+              </div>
+              <div class="mt-5 mb-6 flex flex-row gap-[5px]">
+                <img src="../public/assets/timer.svg" alt="" />
+                <p>Duration: 7 eeks</p>
+              </div>
+              <div>
+                <div class="flex flex-row gap-[5px] mb-2">
+                  <p class="text-abu">$80.00 USD</p>
+                  <p class="text-abu">80% discount</p>
+                </div>
+                <button
+                  class="w-full py-[14px] text-white bg-ungu font-medium rounded-md"
+                >
+                  Buy now $14.00 USD
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 border-2 rounded-lg w-[354px]">
+            <img
+              class="rounded-lg"
+              src="../public/images/thumbnail.jpg"
+              alt=""
+            />
+            <div class="mt-6">
+              <div>
+                <h3 class="text-2xl font-semibold">
+                  Frontend Development with JavaScript
+                </h3>
+                <p class="mt-2 text-abu text-sm font-normal">
+                  By Cristian Muñoz
+                </p>
+              </div>
+              <div class="mt-5 mb-6 flex flex-row gap-[5px]">
+                <img src="../public/assets/timer.svg" alt="" />
+                <p>Duration: 7 eeks</p>
+              </div>
+              <div>
+                <div class="flex flex-row gap-[5px] mb-2">
+                  <p class="text-abu">$80.00 USD</p>
+                  <p class="text-abu">80% discount</p>
+                </div>
+                <button
+                  class="w-full py-[14px] text-white bg-ungu font-medium rounded-md"
+                >
+                  Buy now $14.00 USD
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card course -->
+      </div>
+    </section>
+    <!-- END POPULAR COURSES -->
+
+    <!-- QUOTE -->
+    <section
+      style="background-image: url('../public/images/background.png')"
+      class="py-[152px] sm:py-56 bg-cover bg-center bg-no-repeat"
+    >
+      <div class="container mx-auto px-4 md:px-32 text-white text-center">
+        <h2 class="text-[30px] sm:text-5xl font-medium sm:font-semibold mb-8">
+          Emily Rolando
+        </h2>
+        <p class="text-2xl sm:text-3xl font-medium sm:font-semibold">
+          I recently started learning to code with Tian and it's been a
+          game-changer. The lessons are clear and engaging, perfect for
+          beginners like me. I've already built my first app thanks to their
+          hands-on approach. Highly recommend Tian for anyone starting their
+          coding journey!
+        </p>
+      </div>
+    </section>
+    <!-- END QUOTE -->
+
+    <!-- PLUS -->
+    <section>
+      <div
+        class="container mx-auto py-32 px-4 md:px-32 flex flex-col gap-[150px]"
+      >
+        <div
+          class="flex flex-col xl:flex-row xl:items-center gap-3 md:gap-[122px]"
+        >
+          <img src="../public/images/computer.png" alt="" />
+          <div class="text-center xl:text-left">
+            <h5 class="text-[30px] sm:text-5xl font-semibold mb-5">
+              Explore topics
+            </h5>
+            <p
+              class="text-xl sm:text-[30px] font-medium sm:font-normal text-abu leading-12 sm:leading-10"
+            >
+              Dive deep into our diverse catalog featuring a curated selection
+              of courses in the realms of arts and writing. Experience knowledge
+              crafted by experts, designed to inspire and nurture your creative
+              journey.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col xl:flex-row xl:items-center gap-3 md:gap-[122px]"
+        >
+          <img src="../public/images/community.png" alt="" />
+          <div class="text-center xl:text-left">
+            <h5 class="text-[30px] sm:text-5xl font-semibold mb-5">
+              Meet new Friends
+            </h5>
+            <p
+              class="text-xl sm:text-[30px] font-medium sm:font-normal text-abu leading-12 sm:leading-10"
+            >
+              Connect with our expansive network, match with like-minded peers,
+              and learn code together.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col xl:flex-row xl:items-center gap-3 md:gap-[122px]"
+        >
+          <img src="../public/images/group.png" alt="" />
+          <div class="text-center xl:text-left">
+            <h5 class="text-[30px] sm:text-5xl font-semibold mb-5">Find</h5>
+            <p
+              class="text-xl sm:text-[30px] font-medium sm:font-normal text-abu leading-12 sm:leading-10"
+            >
+              Connect with people around the world in a huge community with
+              million of students.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END PLUS -->
+  </body>
+  <!-- FOOTER -->
+  <footer class="hidden sm:block px-4 sm:px-[80px] md:px-32 bg-white">
+    <div
+      class="container mx-auto py-[100px] flex flex-col gap-24 xl:flex-row xl:gap-72"
+    >
+      <div>
+        <img src="../public/assets/logo.svg" alt="logo" class="mb-14" />
+        <div class="flex flex-row gap-3">
+          <box-icon
+            type="logo"
+            color="#737373"
+            name="instagram"
+            class="w-[52px] h-[52px] border-2 rounded-lg"
+          ></box-icon>
+          <box-icon
+            type="logo"
+            color="#737373"
+            name="figma"
+            class="w-[52px] h-[52px] border-2 rounded-lg"
+          ></box-icon>
+          <box-icon
+            type="logo"
+            color="#737373"
+            name="linkedin-square"
+            class="w-[52px] h-[52px] border-2 rounded-lg"
+          ></box-icon>
+          <box-icon
+            name="twitter"
+            color="#737373"
+            type="logo"
+            class="w-[52px] h-[52px] border-2 rounded-lg"
+          ></box-icon>
+          <box-icon
+            name="telegram"
+            color="#737373"
+            type="logo"
+            class="w-[52px] h-[52px] border-2 rounded-lg"
+          ></box-icon>
+        </div>
+      </div>
+      <div class="flex flex-row gap-[120px]">
+        <div>
+          <h1 class="text-[28px] font-semibold mb-[50px]">Product</h1>
+          <div class="flex flex-col gap-[30px]">
+            <a class="text-2xl font-normal" href="#">Courses</a>
+            <a class="text-2xl font-normal" href="#">Development</a>
+          </div>
+        </div>
+        <div>
+          <h1 class="text-[28px] font-semibold mb-[50px]">Resources</h1>
+          <div class="flex flex-col gap-[30px]">
+            <a class="text-2xl font-normal" href="#">Careers</a>
+            <a class="text-2xl font-normal" href="#">Blog</a>
+          </div>
+        </div>
+        <div>
+          <h1 class="text-[28px] font-semibold mb-[50px]">Company</h1>
+          <div class="flex flex-col gap-[30px]">
+            <a class="text-2xl font-normal" href="#">QA</a>
+            <a class="text-2xl font-normal" href="#">Term and conditions</a>
+            <a class="text-2xl font-normal" href="#">Privacy policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</html>
